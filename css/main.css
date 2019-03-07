@@ -124,12 +124,13 @@ section, footer {
 .section-footer {
     background-color: #881630;
     color: white;
+    padding: 2.2rem 0 3.6rem;
 }
 
 .section-coming {
     color: black;
     background-color: #f2f2f4;
-    padding: 4rem 0 3.6rem;
+    padding: 4rem 0 2rem;
 }
 .section-header {
     background-color: #b31437;
@@ -193,6 +194,10 @@ a.btn {
     margin-bottom: 1.4rem;
 }
 
+.event + .event {
+    margin-top: 2.6rem;
+}
+
 .event__text {
     margin-bottom: 1.9em;
     font-size: .8rem;
@@ -211,7 +216,7 @@ a.btn {
 }
 
 .countdown.flip-clock-wrapper {
-    margin: -0.3rem auto 2.6rem;
+    margin: -0.3rem auto 2.4rem;
     display: inline-block;
     width: auto;
 }
@@ -221,10 +226,11 @@ a.btn {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
+    font-size: .8em;
 }
 
 .footer__logo {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     max-width: 50%;
 }
 
