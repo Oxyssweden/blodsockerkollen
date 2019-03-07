@@ -163,11 +163,21 @@ a.btn {
     text-decoration: none;
     color: white;
     font-size: .8rem;
+    transition: background-color ease-in .1s;
+}
+
+a.btn:hover, a.btn:active {
+    background-color: #b31437;
 }
 
 .section-header .btn {
     background-color: white;
     color:#881630;
+}
+
+.section-header a.btn:hover, .section-header a.btn:active {
+    background-color: white;
+    color: #b31437;
 }
 
 .header-intro,
@@ -403,7 +413,8 @@ a.btn {
     text-align: center;
     background-color: #fff;
     border-radius: .04em;
-   }
+    font-size: .9em;
+}
 
 .flip-clock-wrapper ul li a div.up div.inn {
     top: 0; }
@@ -673,6 +684,26 @@ a.btn {
  /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+}
 
 /*
  * Hide visually and from screen readers
