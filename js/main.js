@@ -49,8 +49,8 @@
 
   function calculateDates(event) {
     event[EVENT_DATE] = event[EVENT_DATE].trim();
-    event[EVENT_START] = event[EVENT_START].trim();
-    event[EVENT_END] = event[EVENT_END].trim();
+    event[EVENT_START] = event[EVENT_START] ? event[EVENT_START].trim() : event[EVENT_START];
+    event[EVENT_END] = event[EVENT_END] ? event[EVENT_END].trim() : event[EVENT_END];
     event[EVENT_START_TIMESTAMP] = moment.tz(event[EVENT_DATE] + (event[EVENT_START] ? ' ' + event[EVENT_START] : ''), "Europe/Stockholm").unix();
     event[EVENT_END_TIMESTAMP] = moment.tz(event[EVENT_DATE] + (event[EVENT_END] ? ' ' + event[EVENT_END] : ''), "Europe/Stockholm").unix();
     return event;
