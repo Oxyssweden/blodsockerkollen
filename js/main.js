@@ -17,9 +17,9 @@
           '          </svg>';
 
   var req = new XMLHttpRequest();
-  req.responseType = 'json';
   //https://stackoverflow.com/questions/30082277/accessing-a-new-style-public-google-sheet-as-json
   req.open('GET', '  https://sheets.googleapis.com/v4/spreadsheets/1gIU2k-9lMgLSDuMw6bWAStAG4Xzrbvb5qPHiRCMkQ0Y/values/Datum?key=AIzaSyAga6MU-zDFj6Dmn65t5reZOdtKP3Kv5tk', true);
+  req.responseType = 'json';
   req.onload  = function() {
     var jsonResponse = req.response.values;
     var headers = jsonResponse.shift();
