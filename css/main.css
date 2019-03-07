@@ -198,6 +198,7 @@ a.btn:hover, a.btn:active {
     width: auto;
     vertical-align: middle;
     margin-right: .2em;
+    margin-bottom: .1em;
 }
 
 .event {
