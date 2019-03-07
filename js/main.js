@@ -16,9 +16,12 @@
           '            <g><g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"><path d="M4757.1,5012.2c-783.1-50-1525.9-396.4-2091.6-971.7c-200.1-204-254-271.3-404.1-498.4c-381-571.5-556.1-1210.3-529.2-1922.3c23.1-598.4,173.2-1079.5,517.6-1647.1c67.3-111.6,710-1225.7,1429.7-2478.3C4397.2-3756.3,4991.8-4780,4997.6-4780c5.8,0,619.6,1058.3,1364.2,2353.3c742.7,1293,1406.6,2443.7,1472,2559.2c727.3,1241.1,531.1,2836.2-477.2,3877.2C6656.2,4733.1,5761.5,5077.6,4757.1,5012.2z M5315,2943.7c386.8-100,735-429.1,858.2-815.8c57.7-175.1,71.2-488.7,28.9-654.2c-134.7-540.7-586.9-921.7-1133.3-954.4C4472.3,480.7,3941.2,879,3793,1473.6c-42.3,165.5-28.9,479.1,28.9,654.2c94.3,296.3,321.3,567.6,590.7,706.2c84.7,42.3,182.8,88.5,219.4,100C4828.2,2995.6,5091.9,2999.5,5315,2943.7z"/></g></g>\n' +
           '          </svg>';
 
-  var req = new XMLHttpRequest();
+  var url, req = new XMLHttpRequest();
   //https://stackoverflow.com/questions/30082277/accessing-a-new-style-public-google-sheet-as-json
-  req.open('GET', '  https://sheets.googleapis.com/v4/spreadsheets/1gIU2k-9lMgLSDuMw6bWAStAG4Xzrbvb5qPHiRCMkQ0Y/values/Datum?key=AIzaSyAga6MU-zDFj6Dmn65t5reZOdtKP3Kv5tk', true);
+  url = 'https://sheets.googleapis.com/v4/spreadsheets/1gIU2k-9lMgLSDuMw6bWAStAG4Xzrbvb5qPHiRCMkQ0Y/values/Datum?key=AIzaSyAga6MU-zDFj6Dmn65t5reZOdtKP3Kv5tk';
+  // Abusing some random parameter for cache busting
+  url += '&upload_protocol=' + now;
+  req.open('GET', url, true);
   req.responseType = 'json';
   req.onload  = function() {
     var jsonResponse = req.response.values;
