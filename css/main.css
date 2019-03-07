@@ -12,13 +12,25 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-   html {
+html {
     color: #222;
-   background-color: #881630;
-   font-size: 1em;
+    background-color: #881630;
     line-height: 1.4;
     text-align:center;
     font-family: "Droid Serif",serif;
+}
+
+html {
+    font-size: 15px;
+    font-size: calc( 15px + 10 * ( ( 100vw - 375px ) / 825 ));
+}
+
+@media screen and (max-width: 375px) {
+    html { font-size: 15px; }
+}
+
+@media screen and (min-width: 1200px) {
+    html { font-size: 25px; }
 }
 
 /*
@@ -100,13 +112,13 @@ textarea {
   ========================================================================== */
 
 .container {
-    max-width: 650px;
+    max-width: 35rem;
     padding: 0 1rem;
     margin: 0 auto;
 }
 
 section, footer {
-    padding: 3rem 0 3rem;
+    padding: 3.6rem 0 3.6rem;
 }
 
 .section-footer {
@@ -117,6 +129,7 @@ section, footer {
 .section-coming {
     color: black;
     background-color: #f2f2f4;
+    padding: 4rem 0 3.6rem;
 }
 .section-header {
     background-color: #b31437;
@@ -130,6 +143,12 @@ section, footer {
 h1, h2 {
     font-family: "Montserrat",sans-serif;
     margin: 0 0 .5em;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+}
+
+.section-coming h1 {
+    margin-bottom: 2.6rem;
 }
 
 a.btn {
@@ -137,12 +156,12 @@ a.btn {
     display: inline-block;
     background-color: #881630;
     border-radius: 6px;
-    padding: .8em 2em;
+    padding: .5em 1.3em;
     text-transform: uppercase;
     font-weight: 700;
     text-decoration: none;
     color: white;
-    font-size: .85rem;
+    font-size: .8rem;
 }
 
 .section-header .btn {
@@ -152,7 +171,7 @@ a.btn {
 
 .header-intro,
 .page-title {
-    margin: 0 0 3rem;
+    margin: 0 0 3.6rem;
 }
 
 .icon path {
@@ -167,34 +186,34 @@ a.btn {
     height: 1rem;
     width: auto;
     vertical-align: middle;
+    margin-right: .2em;
 }
 
 .event {
-    margin-bottom: 1rem;
+    margin-bottom: 1.4rem;
 }
 
 .event__text {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.9em;
+    font-size: .8rem;
+    line-height: 1.25;
 }
 
 
 .event__time,
 .event__location {
     font-weight: normal;
-    font-size: 1.2rem;
     margin: 0;
 }
 
 .event__time {
-    margin-bottom: .8em;
+    margin-bottom: 1em;
 }
 
 .countdown.flip-clock-wrapper {
-    margin: 0 auto;
+    margin: -0.3rem auto 2.6rem;
     display: inline-block;
     width: auto;
-    margin-bottom: 4rem;
-
 }
 
 .footer__links a {
@@ -251,7 +270,7 @@ a.btn {
 
 /* Main */
 .flip-clock-wrapper {
-    font: normal 11px "Helvetica Neue", Helvetica, sans-serif;
+    font-family: "Montserrat",sans-serif;
     -webkit-user-select: none; }
 
 .flip-clock-meridium {
@@ -280,13 +299,13 @@ a.btn {
 .flip-clock-wrapper ul {
     position: relative;
     float: left;
-    margin: 5px;
-    width: 60px;
-    height: 90px;
-    font-size: 80px;
+    margin: 0.03em;
+    width: .75em;
+    height: 1.1em;
+    font-size: 8rem;
     font-weight: bold;
-    line-height: 87px;
-    border-radius: 6px;
+    line-height: 1.1em;
+    border-radius: .05em;
 }
 
 .flip-clock-wrapper ul li {
@@ -296,7 +315,7 @@ a.btn {
     top: 0;
     width: 100%;
     height: 100%;
-    line-height: 87px;
+    line-height: 1.1em;
     text-decoration: none !important;
 }
 
@@ -306,9 +325,9 @@ a.btn {
 .flip-clock-wrapper ul li a {
     display: block;
     height: 100%;
-    -webkit-perspective: 200px;
-    -moz-perspective: 200px;
-    perspective: 200px;
+    -webkit-perspective: 20rem;
+    -moz-perspective: 20rem;
+    perspective: 20rem;
     margin: 0 !important;
     overflow: visible !important;
     cursor: default !important; }
@@ -319,7 +338,7 @@ a.btn {
     left: 0;
     width: 100%;
     height: 50%;
-    font-size: 80px;
+    font-size: 8rem;
     overflow: hidden;
     outline: 1px solid transparent; }
 
@@ -340,11 +359,11 @@ a.btn {
 .flip-clock-wrapper ul li a div.up:after {
     content: "";
     position: absolute;
-    top: 43px;
+    top: 0.53em;
     left: 0;
     z-index: 5;
     width: 100%;
-    height: 4px;
+    height: .02em;
     background-color: #b31437;
 }
 
@@ -355,8 +374,8 @@ a.btn {
     -o-transform-origin: 50% 0;
     transform-origin: 50% 0;
     bottom: 0;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: .05em;
+    border-bottom-right-radius: .05em;
 }
 
 .flip-clock-wrapper ul li a div div.inn {
@@ -368,8 +387,8 @@ a.btn {
     color: #881630;
     text-align: center;
     background-color: #fff;
-    border-radius: 6px;
-    font-size: 70px; }
+    border-radius: .05em;
+    font-size: 7rem; }
 
 .flip-clock-wrapper ul li a div.up div.inn {
     top: 0; }
@@ -393,8 +412,8 @@ a.btn {
     float: left;
     display: inline-block;
     position: relative;
-    width: 20px;
-    height: 100px; }
+    width: 1.3em;
+    height: 10em; }
 
 .flip-clock-divider:first-child {
     width: 0; }
@@ -410,18 +429,13 @@ a.btn {
 
 .flip-clock-divider .flip-clock-label {
     position: absolute;
-    bottom: -1.5em;
-    right: -86px;
+    bottom: -.6rem;
+    right: -8.3rem;
     color: white;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: .8rem;
    }
-
-.flip-clock-divider.minutes .flip-clock-label {
-    right: -88px; }
-
-.flip-clock-divider.seconds .flip-clock-label {
-    right: -91px; }
 
 .flip-clock-dot.top {
     top: 30px; }
@@ -530,46 +544,46 @@ a.btn {
 
 /* SHADOW */
 .flip-clock-wrapper ul.play li.flip-clock-before .up .shadow {
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+    background: -moz-linear-gradient(top, rgba(50, 0, 0, 0.1) 0%, rgba(30, 0, 0, 0.6) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(50, 0, 0, 0.1)), color-stop(100%, rgba(30, 0, 0, 0.6)));
     background: linear, top, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.2) 100%;
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-    background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+    background: -o-linear-gradient(top, rgba(50, 0, 0, 0.1) 0%, rgba(30, 0, 0, 0.6) 100%);
+    background: -ms-linear-gradient(top, rgba(50, 0, 0, 0.1) 0%, rgba(30, 0, 0, 0.6) 100%);
+    background: linear, to bottom, rgba(50, 0, 0, 0.1) 0%, rgba(30, 0, 0, 0.6) 100%;
     -webkit-animation: show 0.5s linear both;
     -moz-animation: show 0.5s linear both;
     animation: show 0.5s linear both; }
 
 .flip-clock-wrapper ul.play li.flip-clock-active .up .shadow {
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
+    background: -moz-linear-gradient(top, rgba(50, 0, 0, 0.1) 0%, rgba(30, 0, 0, 0.6) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(50, 0, 0, 0.1)), color-stop(100%, rgba(30, 0, 0, 0.6)));
     background: linear, top, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.2) 100%;
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-    background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
+    background: -o-linear-gradient(top, rgba(50, 0, 0, 0.1) 0%, rgba(30, 0, 0, 0.6) 100%);
+    background: -ms-linear-gradient(top, rgba(50, 0, 0, 0.1) 0%, rgba(30, 0, 0, 0.6) 100%);
+    background: linear, to bottom, rgba(50, 0, 0, 0.1) 0%, rgba(30, 0, 0, 0.6) 100%;
     -webkit-animation: hide 0.5s 0.3s linear both;
     -moz-animation: hide 0.5s 0.3s linear both;
     animation: hide 0.5s 0.3s linear both; }
 
 /*DOWN*/
 .flip-clock-wrapper ul.play li.flip-clock-before .down .shadow {
-    background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+    background: -moz-linear-gradient(top, rgba(30, 0, 0, 0.6) 0%, rgba(50, 0, 0, 0.1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30, 0, 0, 0.6)), color-stop(100%, rgba(50, 0, 0, 0.1)));
     background: linear, top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.01) 100%;
-    background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-    background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -o-linear-gradient(top, rgba(30, 0, 0, 0.6) 0%, rgba(50, 0, 0, 0.1) 100%);
+    background: -ms-linear-gradient(top, rgba(30, 0, 0, 0.6) 0%, rgba(50, 0, 0, 0.1) 100%);
     background: linear, to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.01) 100%;
     -webkit-animation: show 0.5s linear both;
     -moz-animation: show 0.5s linear both;
     animation: show 0.5s linear both; }
 
 .flip-clock-wrapper ul.play li.flip-clock-active .down .shadow {
-    background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
+    background: -moz-linear-gradient(top, rgba(30, 0, 0, 0.6) 0%, rgba(50, 0, 0, 0.1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(30, 0, 0, 0.6)), color-stop(100%, rgba(50, 0, 0, 0.1)));
     background: linear, top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.01) 100%;
-    background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-    background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-    background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+    background: -o-linear-gradient(top, rgba(30, 0, 0, 0.6) 0%, rgba(50, 0, 0, 0.1) 100%);
+    background: -ms-linear-gradient(top, rgba(30, 0, 0, 0.6) 0%, rgba(50, 0, 0, 0.1) 100%);
+    background: linear, to bottom, rgba(30, 0, 0, 0.6) 0%, rgba(50, 0, 0, 0.1) 100%;
     -webkit-animation: hide 0.5s 0.3s linear both;
     -moz-animation: hide 0.5s 0.3s linear both;
     animation: hide 0.5s 0.2s linear both; }
