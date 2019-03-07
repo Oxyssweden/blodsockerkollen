@@ -97,6 +97,9 @@ textarea {
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
+html.flexbox .browserupgrade {
+    display: hidden;
+}
 
 .browserupgrade {
     margin: 0.2em 0;
