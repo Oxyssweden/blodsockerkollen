@@ -200,8 +200,13 @@ a.btn {
 
 .event__text {
     margin-bottom: 1.9em;
-    font-size: .8rem;
+    font-size: 1rem;
     line-height: 1.25;
+}
+@media screen and (min-width: 768px) {
+    .event__text {
+        font-size: .8rem;
+    }
 }
 
 
@@ -219,6 +224,11 @@ a.btn {
     margin: -0.3rem auto 2.4rem;
     display: inline-block;
     width: auto;
+    font-size: 1.7vw;
+}
+
+@media screen and (min-width: 1440px) {
+    .countdown.flip-clock-wrapper { font-size: 1rem; }
 }
 
 .footer__links a {
@@ -308,10 +318,10 @@ a.btn {
     margin: 0.03em;
     width: .75em;
     height: 1.1em;
-    font-size: 8rem;
+    font-size: 8em;
     font-weight: bold;
     line-height: 1.1em;
-    border-radius: .05em;
+    border-radius: .04em;
 }
 
 .flip-clock-wrapper ul li {
@@ -331,9 +341,9 @@ a.btn {
 .flip-clock-wrapper ul li a {
     display: block;
     height: 100%;
-    -webkit-perspective: 20rem;
-    -moz-perspective: 20rem;
-    perspective: 20rem;
+    -webkit-perspective: 20em;
+    -moz-perspective: 20em;
+    perspective: 20em;
     margin: 0 !important;
     overflow: visible !important;
     cursor: default !important; }
@@ -344,7 +354,6 @@ a.btn {
     left: 0;
     width: 100%;
     height: 50%;
-    font-size: 8rem;
     overflow: hidden;
     outline: 1px solid transparent; }
 
@@ -380,8 +389,8 @@ a.btn {
     -o-transform-origin: 50% 0;
     transform-origin: 50% 0;
     bottom: 0;
-    border-bottom-left-radius: .05em;
-    border-bottom-right-radius: .05em;
+    border-bottom-left-radius: .04em;
+    border-bottom-right-radius: .04em;
 }
 
 .flip-clock-wrapper ul li a div div.inn {
@@ -393,8 +402,8 @@ a.btn {
     color: #881630;
     text-align: center;
     background-color: #fff;
-    border-radius: .05em;
-    font-size: 7rem; }
+    border-radius: .04em;
+   }
 
 .flip-clock-wrapper ul li a div.up div.inn {
     top: 0; }
@@ -422,7 +431,8 @@ a.btn {
     height: 10em; }
 
 .flip-clock-divider:first-child {
-    width: 0; }
+    margin-left: -1.3em;
+}
 
 .flip-clock-dot {
     display: none;
@@ -435,13 +445,22 @@ a.btn {
 
 .flip-clock-divider .flip-clock-label {
     position: absolute;
-    bottom: -.6rem;
-    right: -8.3rem;
+    bottom: -.8em;
+    right: -1000%;
     color: white;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: .8rem;
+    font-size: .8em;
+    width: 1000%;
+    text-align: center;
    }
+
+@media screen and (max-width: 768px) {
+    .flip-clock-divider .flip-clock-label {
+        bottom: -15px;
+        font-size: 10px;
+    }
+}
 
 .flip-clock-dot.top {
     top: 30px; }
