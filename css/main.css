@@ -195,7 +195,7 @@ a.btn:hover, a.btn:active {
 
 .icon {
     height: 1rem;
-    width: auto;
+    width: 1rem;
     vertical-align: middle;
     margin-right: .2em;
     margin-bottom: .1em;
