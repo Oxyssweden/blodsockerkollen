@@ -21,12 +21,13 @@
   url = 'https://sheets.googleapis.com/v4/spreadsheets/1gIU2k-9lMgLSDuMw6bWAStAG4Xzrbvb5qPHiRCMkQ0Y/values/Datum?key=AIzaSyAga6MU-zDFj6Dmn65t5reZOdtKP3Kv5tk';
   // Abusing some random parameter for cache busting
   url += '&upload_protocol=' + now;
+  req.overrideMimeType("application/json");
   req.open('GET', url, true);
-  req.responseType = 'json';
   req.onload  = function() {
-    var jsonResponse = req.response.values;
-    var headers = jsonResponse.shift();
-    var events = jsonResponse.map(calculateDates).filter(dropOldEvents);
+    var jsonResponse = JSON.parse(req.responseText);
+    var values = jsonResponse.values;
+    var headers = values.shift();
+    var events = values.map(calculateDates).filter(dropOldEvents);
 
     if (events[0]) { setNextEvent(events.shift()) }
 
