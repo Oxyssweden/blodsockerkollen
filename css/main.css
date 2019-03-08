@@ -239,7 +239,7 @@ a.btn:hover, a.btn:active {
     margin: -0.3rem auto 2.4rem;
     display: inline-block;
     width: auto;
-    font-size: 1.7vw;
+    font-size: 1.6vw;
 }
 
 @media screen and (min-width: 1440px) {
@@ -337,6 +337,7 @@ a.btn:hover, a.btn:active {
     font-weight: bold;
     line-height: 1.1em;
     border-radius: .04em;
+    padding: 0;
 }
 
 .flip-clock-wrapper ul li {
