@@ -7,7 +7,7 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
- 
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
@@ -233,6 +233,11 @@ a.btn:hover, a.btn:active {
 
 .event__time {
     margin-bottom: 1em;
+}
+
+.coming__footer_text {
+    margin-top: 2.8rem;
+    margin-bottom: 1.4rem;
 }
 
 .countdown.flip-clock-wrapper {
@@ -787,7 +792,7 @@ a.btn:hover, a.btn:active {
   clear: both;
 }
 
- 
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -805,7 +810,7 @@ a.btn:hover, a.btn:active {
     /* Style adjustments for high resolution devices */
 }
 
- 
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
