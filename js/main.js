@@ -39,7 +39,6 @@
   };
   req.send(null);
 
-
   function setNextEvent(event) {
     eventNode = makeEventNode(event);
     $('#next_event').append(eventNode);
@@ -92,6 +91,39 @@
       countdown: true,
       language: 'sv'
     });
+  }
+
+
+  function triggerCookieScripts() {
+    //Ensure archaic IE ( < Edge) support
+    var event, key = 'trackingApproved';
+    if(typeof(Event) === "function") {
+      event = new Event(key+"Event");
+    }else{
+      event = document.createEvent("Event");
+      event.initEvent(key+"Event", true, false);
+    }
+    window.dispatchEvent(event);
+    dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      "event": key+"Event"
+    });
+  }
+
+  if (navigator.cookieEnabled === true) {
+    if (document.cookie.indexOf("cookieconsent") === -1) {
+      $(document).ready(function() {
+        $('#cookie-banner').delay(500).show().animate({bottom:"0px"},1000);
+        $('#ok-cookie').click(function() {
+          triggerCookieScripts();
+          $('#cookie-banner').fadeOut("fast");
+          document.cookie="cookieconsent=yes; max-age=31536000; path=/";
+        });
+      });
+    } else {
+      // Already approved
+      triggerCookieScripts();
+    }
   }
 
 }(jQuery));

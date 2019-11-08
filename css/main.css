@@ -144,7 +144,7 @@ section, footer {
 /* ==========================================================================
   Custom styles
   ========================================================================== */
-h1, h2 {
+h1, h2, h3, h4 {
     font-family: "Montserrat",sans-serif;
     margin: 0 0 .5em;
     line-height: 1.1;
@@ -156,6 +156,7 @@ h1, h2 {
 }
 
 a.btn {
+    cursor: pointer;
     font-family: "Montserrat",sans-serif;
     display: inline-block;
     background-color: #881630;
@@ -172,6 +173,14 @@ a.btn {
 a.btn:hover, a.btn:active {
     background-color: #b31437;
 }
+
+a.btn--approve {
+  background-color: #14b969;
+}
+a.btn--approve:hover, a.btn--approve:active {
+  background-color: #007d41;
+}
+
 
 .section-header .btn {
     background-color: white;
@@ -262,6 +271,18 @@ a.btn:hover, a.btn:active {
 .footer__logo {
     margin-bottom: 1rem;
     max-width: 50%;
+}
+
+.cookie-banner {
+  background-color: #881630;
+  color: #fff;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+}
+
+.cookie-banner__inner {
+  padding: 1em;
 }
 
  /* ==========================================================================

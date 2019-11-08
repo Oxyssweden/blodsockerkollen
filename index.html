@@ -21,21 +21,54 @@
 
   <!-- Facebook Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '849828121793600');
-    fbq('track', 'PageView');
+    window.addEventListener('trackingApprovedEvent', function() {
+      console.log('event');
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ?
+              n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '849828121793600');
+      fbq('track', 'PageView');
+    })
   </script>
   <noscript><img height="1" width="1" style="display:none"
                  src="https://www.facebook.com/tr?id=849828121793600&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Facebook Pixel Code -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    console.log('test');
+    window.addEventListener('trackingApprovedEvent', function() {
+      console.log('event');
+
+      var s = document.createElement("script");
+      s.src = "https://www.googletagmanager.com/gtag/js?id=UA-113894086-2";
+      document.head.appendChild(s);
+      console.log(s);
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'UA-113894086-2');
+    })
+  </script>
 </head>
 
 <body>
@@ -68,8 +101,21 @@
       <div class="footer__links"><a href="https://www.diabeteswellness.se/">diabeteswellness.se</a></div>
     </div>
   </footer>
-    
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+
+    <div id="cookie-banner" class="cookie-banner" style="bottom:-200px; display: none;">
+      <div class="cookie-banner__inner">
+        <div id="cookie-banner__text">
+          <h3>Vi använder cookies för att kunna ge dig som besökare av vår webbplats bättre service</h3>
+          <p>Genom att fortsätta surfa på webbplatsen accepterar du att vi använder cookies.</p>
+        </div>
+        <div id="cookie-banner__buttons">
+          <a class="btn btn--negative" href="https://www.diabeteswellness.se/integritet">Nej, ge mig mer info</a>
+          <a id="ok-cookie" class="btn btn--approve">OK, jag godkänner</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="js/vendor/moment_w_tz.min.js"></script>
   <script src="js/vendor/moment.sv.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -77,16 +123,6 @@
   <script src="js/vendor/flipclock.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js?v=1.0.5"></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113894086-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-113894086-2');
-    </script>
-
 </body>
 
 </html>
