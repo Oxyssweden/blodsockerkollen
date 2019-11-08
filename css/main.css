@@ -274,6 +274,7 @@ a.btn--approve:hover, a.btn--approve:active {
 }
 
 .cookie-banner {
+  z-index: 100;
   background-color: #881630;
   color: #fff;
   width: 100%;
