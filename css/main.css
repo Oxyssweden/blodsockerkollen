@@ -146,7 +146,13 @@ section, footer {
   ========================================================================== */
 h1, h2, h3, h4 {
     font-family: "Montserrat",sans-serif;
-    margin: 0 0 .5em;
+    margin: 0 0 .5em;.footer__links a {
+    font-family: "Montserrat",sans-serif;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: .8em;
+}
     line-height: 1.1;
     letter-spacing: -0.015em;
 }
@@ -260,12 +266,20 @@ a.btn--approve:hover, a.btn--approve:active {
     .countdown.flip-clock-wrapper { font-size: 1rem; }
 }
 
+.footer__links svg {
+    max-width: 4vw;
+    width: 40px;
+}
+
 .footer__links a {
     font-family: "Montserrat",sans-serif;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
     font-size: .8em;
+    white-space: nowrap;
+    margin: 0 1em 1em;
+    line-height: 3em;
 }
 
 .footer__logo {
