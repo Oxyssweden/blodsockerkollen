@@ -1,7 +1,5 @@
 (function($) {
 
-  moment.locale('sv');
-
   var clock,
       // Grab the current date in seconds
       now = Math.floor(Date.now() / 1000),
@@ -50,8 +48,17 @@
     event[EVENT_DATE] = event[EVENT_DATE].trim();
     event[EVENT_START] = event[EVENT_START] ? event[EVENT_START].trim() : event[EVENT_START];
     event[EVENT_END] = event[EVENT_END] ? event[EVENT_END].trim() : event[EVENT_END];
-    event[EVENT_START_TIMESTAMP] = moment.tz(event[EVENT_DATE] + (event[EVENT_START] ? ' ' + event[EVENT_START] : ''), "Europe/Stockholm").unix();
-    event[EVENT_END_TIMESTAMP] = moment.tz(event[EVENT_DATE] + (event[EVENT_END] ? ' ' + event[EVENT_END] : ''), "Europe/Stockholm").unix();
+
+    var eventStart = event[EVENT_DATE] + (event[EVENT_START] ? ' ' + event[EVENT_START] : '');
+    event[EVENT_START_TIMESTAMP]  = Date.parse(eventStart) / 1000;
+    var eventEnd = event[EVENT_DATE] + (event[EVENT_END] ? ' ' + event[EVENT_END] : '');
+    event[EVENT_END_TIMESTAMP]  = Date.parse(eventEnd) / 1000;
+
+   // var date = new Date(dateTimestamp).toLocaleString('sv-SE', {timezone: "Europe/Stockholm"});
+
+   // event[EVENT_START_TIMESTAMP] = moment.tz(event[EVENT_DATE] + (event[EVENT_START] ? ' ' + event[EVENT_START] : ''), "Europe/Stockholm").unix();
+    //event[EVENT_END_TIMESTAMP] = moment.tz(event[EVENT_DATE] + (event[EVENT_END] ? ' ' + event[EVENT_END] : ''), "Europe/Stockholm").unix();
+
     return event;
   }
 
@@ -68,11 +75,16 @@
 
 
   function makeEventNode(event) {
+    var options =  {
+      month: 'long',
+      day: 'numeric',
+    };
     var dateString,
         wrapper = $('<div class="event">'),
         mapUrl = 'https://www.google.se/maps/search/'+ encodeURIComponent(event[EVENT_LOCATION]);
-    dateString = (event[EVENT_START] ? event[EVENT_START].replace(':00', '') + '–' + event[EVENT_END] + ', ' : '')
-        + moment(event[EVENT_START_TIMESTAMP] * 1000).format('D MMMM');
+    dateString = (event[EVENT_START] ? event[EVENT_START].replace(':00', '') + '–' + event[EVENT_END] + ', ' : '') +
+      new Intl.DateTimeFormat('sv-SE', {month: 'long', day: 'numeric'}).format(new Date(event[EVENT_START_TIMESTAMP] * 1000));
+
     wrapper.append($('<h3 class="event__location">').html(mapIcon + event[EVENT_LOCATION]));
     wrapper.append($('<div class="event__time">').html(timeIcon + dateString));
     wrapper.append($('<div class="event__text">').html(event[EVENT_TEXT] || defaultText));
@@ -84,7 +96,6 @@
   function startCountdown(futureDate) {
     // Calculate the difference in seconds between the future and current date
     var diff = futureDate === 0 ? 0 : futureDate - now;
-
     // Instantiate a coutdown FlipClock
     clock = $('.countdown').FlipClock(diff, {
       clockFace: 'DailyCounter',
